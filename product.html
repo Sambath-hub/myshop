@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - ShopZone</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">
+                <i class="fas fa-shopping-bag"></i>
+                ShopZone
+            </a>
+            <div class="nav-items">
+                <a href="index.html#home">Home</a>
+                <a href="#filters">Products</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <div class="nav-icons">
+                <a href="#" class="search-icon" id="searchIcon" title="Search">
+                    <i class="fas fa-search"></i>
+                </a>
+                <a href="cart.html" class="cart-icon">
+                      <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>All Products</h1>
+                <p>Discover our complete collection of 30+ premium products</p>
+                <a href="#filters" class="cta-btn">Browse Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section id="filters" class="filters-section">
+        <div class="container">
+            <div class="filters">
+                <div class="filter-group">
+                    <select id="categoryFilter" class="filter-select">
+                        <option value="all">All Categories</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="clothing">Clothing</option>
+                        <option value="accessories">Accessories</option>
+                        <option value="home">Home & Garden</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <select id="sortFilter" class="filter-select">
+                        <option value="name">Sort by Name</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="new">Newest First</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <input type="range" id="priceFilter" min="0" max="500" value="500" class="price-slider">
+                    <span class="price-value">$<span id="priceValue">500</span></span>
+                </div>
+                <button class="clear-filters" id="clearFilters">Clear All</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-header">
+                <h2 class="section-title" id="productsCount">30 Products Found</h2>
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid"><i class="fas fa-th-large"></i></button>
+                    <button class="view-btn" data-view="list"><i class="fas fa-list"></i></button>
+                </div>
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <!-- 30 Products loaded by JavaScript -->
+            </div>
+            <div class="no-products" id="noProducts" style="display: none;">
+                <i class="fas fa-search"></i>
+                <h3>No products found</h3>
+                <p>Try adjusting your filters</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Detail Modal -->
+    <div class="modal product-modal" id="productModal">
+        <div class="modal-content product-modal-content">
+            <div class="product-detail-header">
+                <span class="close" id="closeProduct">&times;</span>
+            </div>
+            <div class="product-detail" id="productDetail">
+                <!-- Product details loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-shopping-cart"></i> Shopping Cart</h3>
+                <span class="close" id="closeCart">&times;</span>
+            </div>
+            <div class="cart-items" id="cartItems"></div>
+            <div class="cart-total">
+                <h3>Total: $<span id="cartTotal">0.00</span></h3>
+                <button class="checkout-btn" id="checkoutBtn">
+                    <i class="fas fa-credit-card"></i> Proceed to Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 <strong>ShopZone</strong>. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="products.js"></script>
+</body>
+</html>

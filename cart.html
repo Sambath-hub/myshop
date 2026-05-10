@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - ShopZone</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">
+                <i class="fas fa-shopping-bag"></i> ShopZone
+            </a>
+            <div class="nav-items">
+                <a href="index.html#home">Home</a>
+                <a href="product.html">Products</a>
+                <a href="cart.html">Cart</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="nav-icons">
+                <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+                <a href="cart.html" class="cart-icon active" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Cart Hero -->
+    <section class="cart-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1><i class="fas fa-shopping-cart"></i> Shopping Cart</h1>
+                <p>Review your items and proceed to checkout</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Cart Content -->
+    <section class="cart-section">
+        <div class="container">
+            <div class="cart-container">
+                <!-- Cart Items -->
+                <div class="cart-items-section" id="cartItemsSection">
+                    <div class="cart-header">
+                        <h2 id="cartTitle">Your Cart (<span id="cartItemsCount">0</span> items)</h2>
+                    </div>
+                    <div class="cart-items" id="cartItems">
+                        <!-- Items loaded by JS -->
+                    </div>
+                </div>
+
+                <!-- Empty Cart -->
+                <div class="empty-cart" id="emptyCart" style="display: none;">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h3>Your cart is empty</h3>
+                    <p>Add some products to get started!</p>
+                    <a href="product.html" class="cta-btn">Start Shopping</a>
+                </div>
+
+                <!-- Cart Summary -->
+                <div class="cart-summary" id="cartSummary">
+                    <h3>Order Summary</h3>
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping:</span>
+                        <span id="shipping">Free</span>
+                    </div>
+                    <div class="summary-row total-row">
+                        <span><strong>Total:</strong></span>
+                        <span id="totalAmount"><strong>$0.00</strong></span>
+                    </div>
+                    <button class="checkout-btn-large" id="checkoutBtn" onclick="proceedToCheckout()" disabled>
+                        <i class="fas fa-credit-card"></i> Proceed to Checkout
+                    </button>
+                    <div class="continue-shopping">
+                        <a href="product.html">← Continue Shopping</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery Tracking Modal -->
+    <div class="modal" id="deliveryModal">
+        <div class="modal-content delivery-modal">
+            <div class="delivery-header">
+                <h3><i class="fas fa-truck"></i> Delivery Tracking</h3>
+                <span class="close" id="closeDelivery">&times;</span>
+            </div>
+            <div class="delivery-content" id="deliveryContent">
+                <!-- Dynamic content -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 ShopZone. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="cart.js"></script>
+</body>
+</html>
